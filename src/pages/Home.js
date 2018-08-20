@@ -7,7 +7,7 @@ import {
 } from 'recompose';
 import { Link } from 'react-router-dom';
 import { initAccommodations } from '../actions/accommodations';
-import accommodations from '../store/listings.json';
+import accommodations from '../listings.json';
 import './Home.css';
 
 export const renderOverviews = (accommodations, withDescription=false) => {

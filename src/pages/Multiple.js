@@ -7,7 +7,7 @@ import {
     lifecycle,
 } from 'recompose';
 import { initAccommodations } from '../actions/accommodations';
-import accommodations from '../store/listings.json';
+import accommodations from '../listings.json';
 import { renderOverviews } from './Home';
 import './Home.css';
 
