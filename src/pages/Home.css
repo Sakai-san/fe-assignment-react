@@ -1,0 +1,30 @@
+.listing-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listing {
+  padding: 40px;
+  clear: both;
+}
+
+.listing .img {
+  width: 160px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  background: #eaeaea;
+}
+
+.listing .img img {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.listing p {
+  margin-left: 180px;
+}
