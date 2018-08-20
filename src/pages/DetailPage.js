@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { compose } from 'recompose';
-import { initAccommodations } from '../actions/accommodations';
+import { fetchAccommodations } from '../actions/accommodations';
 import { withLifeCycle } from './Home';
 
 const DetailPage = ({ accommodations, match }) => {
@@ -31,7 +31,7 @@ const DetailPage = ({ accommodations, match }) => {
 const mapStateToProps = (state) => ({ accommodations: state.accommodations });
 
 const matchDispatchToProps = (dispatch) => (
-  bindActionCreators({ initAccommodations }, dispatch)
+  bindActionCreators({ fetchAccommodations }, dispatch)
 );
 
 export default compose(

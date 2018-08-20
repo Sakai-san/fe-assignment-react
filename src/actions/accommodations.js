@@ -1,14 +1,14 @@
+import listings from '../listings.json';
 
-export const INIT_ACCOMMODATIONS = 'INIT_ACCOMMODATIONS';
+export const FETCH_ACCOMMODATIONS = 'FETCH_ACCOMMODATIONS';
 
-export const initAccommodations = (accommodations) => ({
-  type: INIT_ACCOMMODATIONS,
-  payload: accommodations,
-});
+export const fetchAccommodations = () => ({
+    type: FETCH_ACCOMMODATIONS,
+    payload: listings
+})
+
 
 /*
-import listings from './listings.json';
-
 export function fetchListings() {
     return dispatch => {
         Promise.resolve(listings)

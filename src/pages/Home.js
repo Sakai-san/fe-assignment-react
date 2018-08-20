@@ -6,8 +6,7 @@ import {
   lifecycle
 } from 'recompose';
 import { Link } from 'react-router-dom';
-import { initAccommodations } from '../actions/accommodations';
-import accommodations from '../listings.json';
+import { fetchAccommodations } from '../actions/accommodations';
 import './Home.css';
 
 export const renderOverviews = (accommodations, withDescription=false) => {
@@ -47,7 +46,7 @@ const Home = ({ accommodations }) =>
 export const withLifeCycle = lifecycle({
   componentDidMount() {
     if(this.props.accommodations.length === 0) {
-        this.props.initAccommodations(accommodations);
+        this.props.fetchAccommodations();
     }
   },
 });
@@ -55,7 +54,7 @@ export const withLifeCycle = lifecycle({
 const mapStateToProps = (state) => ({ accommodations: state.accommodations });
 
 const matchDispatchToProps = (dispatch) => (
-  bindActionCreators({ initAccommodations }, dispatch)
+  bindActionCreators({ fetchAccommodations }, dispatch)
 );
 
 export default compose(

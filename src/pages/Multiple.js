@@ -6,8 +6,7 @@ import {
     compose,
     lifecycle,
 } from 'recompose';
-import { initAccommodations } from '../actions/accommodations';
-import accommodations from '../listings.json';
+import { fetchAccommodations } from '../actions/accommodations';
 import { renderOverviews } from './Home';
 import './Home.css';
 
@@ -42,7 +41,7 @@ const withLifeCycle = lifecycle({
       });
 
     if(this.props.accommodations.length === 0) {
-        this.props.initAccommodations(accommodations);
+        this.props.fetchAccommodations();
     }
   },
 });
@@ -50,7 +49,7 @@ const withLifeCycle = lifecycle({
 const mapStateToProps = (state) => ({ accommodations: state.accommodations });
 
 const matchDispatchToProps = (dispatch) => (
-  bindActionCreators({ initAccommodations }, dispatch)
+  bindActionCreators({ fetchAccommodations }, dispatch)
 );
 
 export default compose(
